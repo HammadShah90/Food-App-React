@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUtensils, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faFaceSmile } from '@fortawesome/free-regular-svg-icons'
 import { useState } from 'react';
 
 const FetchItem = () => {
@@ -18,9 +19,11 @@ const FetchItem = () => {
         try {
             const response = await axios.get(`https://forkify-api.herokuapp.com/api/v2/recipes?search=${dishName}`)
 
-            console.log(response.data.data.recipes);
+            // console.log(response.data.data.recipes);
 
             setRecipes(response.data.data.recipes);
+
+
 
             getRecipeUi.classList.add('scrolling')
 
@@ -73,86 +76,84 @@ const FetchItem = () => {
                         </ul>
                     )}
                 </div>
-                {/* <div className="col-sm-8">
-                        <div className="recipeDetail">
-                            <div className="recipeDetailInner">
-                                <i class="fa-regular fa-face-smile fs-2" style="color: #fd6c05;"></i>
-                                <h2 class="fs-4">Start by searching for a recipe or <br /> an ingredient. Have fun!</h2>
-                            </div>
-                            <div class="recipeDetailTop">
-                                <div class="recipeImgTitle">
-                                    <img src="./Assets/Pastry.jpg" alt="" />
-                                        <h2>
-                                            Cauliflower Pizza Crust (with BBQ Chicken Pizza)
-                                        </h2>
-                                </div>
-                                <div class="recipeServingTimeBookmark">
-                                    <div class="recipeServingTime">
-                                        <div class="d-flex align-items-center p-1">
-                                            <i class="fa-regular fa-clock fontColor fs-3"></i>
-                                            <p class="mb-0 ms-2">
-                                                <span class="fw-bold">
-                                                    30
-                                                </span>
-                                                MINUTES
-                                            </p>
-                                        </div>
-                                        <div class="d-flex align-items-center p-1">
-                                            <i class="fa-solid fa-user-group fontColor fs-3"></i>
-                                            <p class="mb-0 ms-2">
-                                                <span class="fw-bold">
-                                                    4
-                                                </span>
-                                                SERVINGS
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <i
-                                                class="fa-solid fa-minus borderColor fontColor rounded-circle p-1"></i>
-                                            <i
-                                                class="fa-solid fa-plus borderColor fontColor rounded-circle p-1"></i>
-                                        </div>
-                                    </div>
-                                    <div class="recipeBookmark">
-                                        <i class="fa-regular fa-bookmark"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center mt-5 recipeIngredients">
-                                <h3 class="text-uppercase fontColor">
-                                    Recipe Ingredients
-                                </h3>
-                                <ul class="recipeServing ps-0 mb-0 mt-4">
-                                    <li class="recipeServingList">
-                                        <i class="fa-solid fa-check fontColor"></i>
-                                        <span class="recipeQuantity">
-                                            5
+                <div className="recipeDetail">
+                    <div className="recipeDetailInner">
+                        <FontAwesomeIcon icon={faFaceSmile} style={{fontSize: '40px', color: '#f78737'}}/>
+                        <h2 className='recipeDetailHeading'>Start by searching for a recipe or <br /> an ingredient. Have fun!</h2>
+                    </div>
+                    {/* <div class="recipeDetailTop">
+                        <div class="recipeImgTitle">
+                            <img src="./Assets/Pastry.jpg" alt="" />
+                            <h2>
+                                Cauliflower Pizza Crust (with BBQ Chicken Pizza)
+                            </h2>
+                        </div>
+                        <div class="recipeServingTimeBookmark">
+                            <div class="recipeServingTime">
+                                <div class="d-flex align-items-center p-1">
+                                    <i class="fa-regular fa-clock fontColor fs-3"></i>
+                                    <p class="mb-0 ms-2">
+                                        <span class="fw-bold">
+                                            30
                                         </span>
-                                        <div class="recipeDescription">
-                                            <span>
-                                                cup
-                                            </span>
-                                            sugar
-                                        </div>
-                                    </li>
-                                </ul>
+                                        MINUTES
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-center p-1">
+                                    <i class="fa-solid fa-user-group fontColor fs-3"></i>
+                                    <p class="mb-0 ms-2">
+                                        <span class="fw-bold">
+                                            4
+                                        </span>
+                                        SERVINGS
+                                    </p>
+                                </div>
+                                <div>
+                                    <i
+                                        class="fa-solid fa-minus borderColor fontColor rounded-circle p-1"></i>
+                                    <i
+                                        class="fa-solid fa-plus borderColor fontColor rounded-circle p-1"></i>
+                                </div>
                             </div>
-                            <div class="recipeAddress mt-5 d-flex flex-column align-items-center">
-                                <h3 class="fontColor text-center text-uppercase">
-                                    how to cook it
-                                </h3>
-                                <p class="mt-4 text-center fs-5 px-5 text-secondary">
-                                    This recipe was carefully designed and tested by <span class="fw-bold">All Recipes</span>
-                                    Please check out directions at their website.
-                                </p>
-                                <a href="" class="btn button rounded-pill mt-4 mb-5 fs-4 text-uppercase"
-                                    style="width: 35%; color: #ffffff; padding: 10px;">
-                                    directions
-                                    <i class="fa-solid fa-right-long ms-3"></i>
-                                </a>
+                            <div class="recipeBookmark">
+                                <i class="fa-regular fa-bookmark"></i>
                             </div>
                         </div>
                     </div> */}
+                    {/* <div class="text-center mt-5 recipeIngredients">
+                        <h3 class="text-uppercase fontColor">
+                            Recipe Ingredients
+                        </h3>
+                        <ul class="recipeServing ps-0 mb-0 mt-4">
+                            <li class="recipeServingList">
+                                <i class="fa-solid fa-check fontColor"></i>
+                                <span class="recipeQuantity">
+                                    5
+                                </span>
+                                <div class="recipeDescription">
+                                    <span>
+                                        cup
+                                    </span>
+                                    sugar
+                                </div>
+                            </li>
+                        </ul>
+                    </div> */}
+                    {/* <div class="recipeAddress mt-5 d-flex flex-column align-items-center">
+                        <h3 class="fontColor text-center text-uppercase">
+                            how to cook it
+                        </h3>
+                        <p class="mt-4 text-center fs-5 px-5 text-secondary">
+                            This recipe was carefully designed and tested by <span class="fw-bold">All Recipes</span>
+                            Please check out directions at their website.
+                        </p>
+                        <a href="" class="btn button rounded-pill mt-4 mb-5 fs-4 text-uppercase"
+                            style="width: 35%; color: #ffffff; padding: 10px;">
+                            directions
+                            <i class="fa-solid fa-right-long ms-3"></i>
+                        </a>
+                    </div> */}
+                </div>
             </div>
         </div>
 
