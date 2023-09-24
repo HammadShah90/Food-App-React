@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.mainPage {
+  display: flex;
+  background-color: #fffef2;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+.mainHeading {
+  color: #fd6c05;
+  font-size: 36px;
+}
+
+.inputForm {
+  display: flex;
+  width: 60%;
+}
+
+#dishNameInput {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  width: 60%;
+}
+
+#dishNameInput::placeholder {
+  color: #c2c2c2;
+}
+
+.searchButton {
+  padding: 12px 20px;
+  background-color: #f78737;
+  border: none;
+  border-radius: 15px;
+  margin-left: 5px;
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.recipePage {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-items: self-start;
+}
+
+.recipeImage {
+  width: 55px;
+  height: 55px;
+  border-radius: 50px;
+}
+
+.recipeTitle {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 14.2rem;
+  color: #e47c06;
+  font-size: 14px;
+}
+
+.recipeList {
+  list-style-type: none;
+  padding: 15px 10px;
+}
+
+.recipeLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000000;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.recipeLink:hover {
+  transform: translate(10px);
+}
+
+.recipePublisher {
+  color: #525252;
+  font-size: 12px;
+}
+
+.recipesUI {
+  height: 100vh;
+  margin-top: 20px;
+  padding: 0 5px;
+}
+
+.recipeLoader {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: 20px;
+  font-size: 24px;
+}
+
+.scrolling {
+  overflow-y: scroll;
+}
+
+
+
+
+
+
+
+
+
+
+/* Mini Smartphones */
+@media only screen and (max-width: 374px) {
+  .mainPage {
+    flex-direction: column;
+  }
+  .inputForm {
+    margin-top: 10px;
+    width: 100%;
+  }
+  .mainHeading {
+    font-size: 26px;
+  }
+  #dishNameInput {
+    padding: 10px 12px;
+    font-size: 12px;
+    width: 70%;
+  }
+  .searchButton {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+/* Smartphones */
+@media(min-width: 375px) and (max-width: 500px) {
+  .mainPage {
+    flex-direction: column;
+  }
+  .inputForm {
+    margin-top: 10px;
+    width: 100%;
+  }
+  .mainHeading {
+    font-size: 28px;
+  }
+  #dishNameInput {
+    padding: 12px 16px;
+    font-size: 14px;
+    width: 70%;
+  }
+  .searchButton {
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+
+/* Tablet */
+@media(min-width: 501px) and (max-width: 768px) {
+  
+}
+
+/* Normal */
+@media(min-width: 769px) and (max-width: 1200px) {
+ 
+}
+
+/* Widescreen */
+@media(min-width: 1201px) {
+
+}
+
+/* Landscape */
+/* @media(max-height: 500px) {
+ 
+} */
